@@ -438,49 +438,6 @@ opacity:0;
 
 }
 
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media(max-width:768px){
-
-.card{
-
-width:90%;
-
-padding:35px;
-
-}
-
-h1{
-
-font-size:36px;
-
-}
-
-.question{
-
-font-size:24px;
-
-}
-
-button{
-
-font-size:18px;
-
-padding:15px 28px;
-
-}
-
-#noContainer{
-
-left:60%;
-
-top:70%;
-
-}
-
-}
 
 /* ===========================
    PAGE 3
@@ -1459,4 +1416,217 @@ body{
 
         opacity:0;
     }
+}
+
+
+/* ======================================================
+   MOBILE RESPONSIVE
+====================================================== */
+
+@media screen and (max-width: 768px){
+
+    html{
+        font-size:14px;
+    }
+
+    body{
+        padding:15px;
+        overflow-x:hidden;
+    }
+
+    /* Main Cards */
+
+    .card,
+    .confirmationCard{
+        width:95%;
+        max-width:420px;
+        padding:25px 18px;
+        border-radius:25px;
+        margin:20px auto;
+    }
+
+    /* Titles */
+
+    h1{
+        font-size:2rem !important;
+        line-height:1.2;
+    }
+
+    h2{
+        font-size:1.2rem !important;
+    }
+
+    h3{
+        font-size:1rem !important;
+    }
+
+    p{
+        font-size:0.95rem;
+    }
+
+    /* Buttons */
+
+    button,
+    #yesBtn,
+    #noBtn,
+    #nextBtn,
+    #foodNext,
+    #finishBtn{
+
+        width:100%;
+        max-width:320px;
+        padding:14px 20px;
+        font-size:18px;
+        border-radius:50px;
+        margin-top:15px;
+
+    }
+
+    /* Page 5 */
+
+    .date-section{
+
+        width:100%;
+        gap:15px;
+
+    }
+
+    .date-section label{
+
+        font-size:18px;
+
+    }
+
+    .date-section input{
+
+        width:90%;
+        max-width:300px;
+
+        font-size:17px;
+
+        padding:12px 15px;
+
+    }
+
+    /* Page 6 Food Grid */
+
+    .foodGrid{
+
+        display:grid;
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:15px;
+
+    }
+
+    .foodCard{
+
+        padding:15px 10px;
+
+        border-radius:20px;
+
+    }
+
+    .foodCard img{
+
+        width:75px;
+        height:75px;
+        object-fit:contain;
+
+    }
+
+    .foodCard h3{
+
+        font-size:18px;
+
+    }
+
+    /* Page 7 */
+
+    .summaryBox{
+
+        padding:18px;
+
+    }
+
+    .summaryItem{
+
+        margin-bottom:18px;
+
+    }
+
+    .loveMessage{
+
+        font-size:16px;
+
+        line-height:1.8;
+
+    }
+
+    /* Floating Hearts */
+
+    .heart{
+
+        font-size:20px !important;
+
+    }
+
+}
+
+
+
+/* ======================================================
+   EXTRA SMALL PHONES
+====================================================== */
+
+@media screen and (max-width:480px){
+
+    html{
+        font-size:13px;
+    }
+
+    h1{
+        font-size:1.7rem !important;
+    }
+
+    h2{
+        font-size:1.05rem !important;
+    }
+
+    .foodGrid{
+
+        grid-template-columns:1fr 1fr;
+
+        gap:12px;
+
+    }
+
+    .foodCard{
+
+        padding:12px;
+
+    }
+
+    .foodCard img{
+
+        width:60px;
+        height:60px;
+
+    }
+
+    .foodCard h3{
+
+        font-size:16px;
+
+    }
+
+    button{
+
+        font-size:16px;
+
+        padding:13px 18px;
+
+    }
+
 }
