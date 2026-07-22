@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Choose Your Favorite Food ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="hearts"></div>
+
+<div class="card foodPage">
+
+<h1>🍽️ Choose Your Favorite Foods ❤️</h1>
+
+<p class="question">
+
+Choose as many as you like 😍
+
+</p>
+
+<div class="foodGrid">
+
+<div class="foodCard" data-food="Pizza">
+
+<img src="images/foods/pizza.png" alt="Pizza">
+
+<h3>🍕 Pizza</h3>
+
+</div>
+
+<div class="foodCard" data-food="Burger">
+
+<img src="images/foods/burger.png" alt="Burger">
+
+<h3>🍔 Burger</h3>
+
+</div>
+
+<div class="foodCard" data-food="Pasta">
+
+<img src="images/foods/spaghetti.png" alt="Pasta">
+
+<h3>🍝 Pasta</h3>
+
+</div>
+
+<div class="foodCard" data-food="Momo">
+
+<img src="images/foods/momo.png" alt="Momo">
+
+<h3>🥟 Momo</h3>
+
+</div>
+
+<div class="foodCard" data-food="Ice Cream">
+
+<img src="images/foods/ice-cream.png" alt="Ice Cream">
+
+<h3>🍦 Ice Cream</h3>
+
+</div>
+
+<div class="foodCard" data-food="Chocolate">
+
+<img src="images/foods/chocolate.png" alt="Chocolate">
+
+<h3>🍫 Chocolate</h3>
+
+</div>
+
+</div>
+
+<button id="foodNext">
+
+Continue ❤️
+
+</button>
+
+</div>
+
+<script>
+
+const cards=document.querySelectorAll(".foodCard");
+
+const next=document.getElementById("foodNext");
+
+let selected=[];
+
+cards.forEach(card=>{
+
+card.addEventListener("click",()=>{
+
+const food=card.dataset.food;
+
+card.classList.toggle("selected");
+
+if(selected.includes(food)){
+
+selected=selected.filter(item=>item!==food);
+
+}else{
+
+selected.push(food);
+
+}
+
+next.style.display=selected.length>0?"inline-block":"none";
+
+});
+
+});
+
+next.onclick=function(){
+
+localStorage.setItem("foods",JSON.stringify(selected));
+
+window.location.href="page7.html";
+
+}
+
+</script>
+
+</body>
+
+</html>

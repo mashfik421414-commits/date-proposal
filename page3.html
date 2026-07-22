@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Yay!! ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="hearts"></div>
+
+<div class="card">
+
+<h1>🎉 Yay!!! 🎉</h1>
+
+<p class="question">
+
+You just made me the
+
+<strong>luckiest person</strong>
+
+in the whole world ❤️
+
+<br><br>
+
+Thank you for saying YES 🥹💕
+
+</p>
+
+<button id="continueBtn">
+
+Continue ➜
+
+</button>
+
+</div>
+
+<canvas id="confetti"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+<script>
+
+const duration = 5000;
+
+const animationEnd = Date.now() + duration;
+
+const defaults = {
+
+startVelocity:30,
+
+spread:360,
+
+ticks:60,
+
+zIndex:1000
+
+};
+
+const interval = setInterval(function(){
+
+const timeLeft = animationEnd - Date.now();
+
+if(timeLeft <= 0){
+
+return clearInterval(interval);
+
+}
+
+confetti({
+
+...defaults,
+
+particleCount:6,
+
+origin:{
+
+x:Math.random(),
+
+y:Math.random()-0.2
+
+}
+
+});
+
+},200);
+
+document.getElementById("continueBtn").onclick=function(){
+
+window.location.href="page4.html";
+
+};
+
+</script>
+
+</body>
+
+</html>
