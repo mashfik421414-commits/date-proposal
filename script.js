@@ -126,14 +126,26 @@ const nextBtn = document.getElementById("nextBtn");
 
 if (datePicker && timePicker && nextBtn) {
 
+    // Prevent selecting past dates
+    const today = new Date().toISOString().split("T")[0];
+    datePicker.min = today;
+
     function checkInputs() {
 
-        nextBtn.style.display =
-            (datePicker.value && timePicker.value)
-            ? "inline-block"
-            : "none";
+        if (datePicker.value !== "" && timePicker.value !== "") {
+
+            nextBtn.style.display = "inline-block";
+
+        } else {
+
+            nextBtn.style.display = "none";
+
+        }
+
     }
 
+    datePicker.addEventListener("input", checkInputs);
+    timePicker.addEventListener("input", checkInputs);
     datePicker.addEventListener("change", checkInputs);
     timePicker.addEventListener("change", checkInputs);
 
@@ -142,8 +154,8 @@ if (datePicker && timePicker && nextBtn) {
         localStorage.setItem("date", datePicker.value);
         localStorage.setItem("time", timePicker.value);
 
-        console.log("Saved Date:", datePicker.value);
-        console.log("Saved Time:", timePicker.value);
+        console.log("Date Saved:", localStorage.getItem("date"));
+        console.log("Time Saved:", localStorage.getItem("time"));
 
         window.location.href = "page6.html";
 
